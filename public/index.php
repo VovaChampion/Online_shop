@@ -19,7 +19,8 @@ $rows = $product->getProducts();
             <div class="shop-item">
                 <span class="shop-item-title"><?php echo escape($row["product_name"]); ?></span>
                 <span class="shop-item-description"><?php echo escape($row["description"]); ?></span>
-                <a href="product_detail.php"> <img class="shop-item-image" src="<?php echo escape($row["image_path"]); ?>"></a>
+                <a href="product_detail.php?id=<?php echo escape($row['id'])?>"> <img class="shop-item-image" style="width:14em; height:15em;" src="<?php echo escape($row["image_path"]); ?>"></a>
+                <!-- <a href="product_detail.php?id=1"> <img class="shop-item-image" src="<?php //echo escape($row["image_path"]); ?>"></a> -->
                 <div class="shop-item-details">
                     <span class="shop-item-price"><?php echo "SEK " . escape($row["price"]); ?></span>
                     <input class="shop-item-id" type="hidden" name="id" value="<?php echo escape($row['id'])?>">
