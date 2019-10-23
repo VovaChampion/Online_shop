@@ -6,6 +6,10 @@ require_once('lib/product_class.php');
 $product = new Product();
 $rows = $product->getProducts();
 
+// Remove warning msg “set SameSite cookie to none” from Chrome Extension  https://github.com/GoogleChromeLabs/samesite-examples/blob/master/php.md
+setcookie('same-site-cookie', 'foo', ['samesite' => 'Lax']);
+setcookie('cross-site-cookie', 'bar', ['samesite' => 'None', 'secure' => true]);
+
 ?>
 
 
