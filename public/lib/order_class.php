@@ -10,15 +10,15 @@ class Order
         $this->db = $this->db->connect();
     }
 
-    // // get last order id (max)
-    // public function getLastOrderId()
-    // {
-    //     $stmt = $this->db->prepare('SELECT MAX(id) FROM orders');
-    //     $stmt->execute();
+    // get last order id (max)
+    public function getLastOrderId()
+    {
+        $stmt = $this->db->prepare('SELECT MAX(id) FROM batman.order');
+        $stmt->execute();
 
-    //     $id = $stmt->fetchColumn();
-    //     return $id;
-    // }
+        $id = $stmt->fetchColumn();
+        return $id;
+    }
 
     // public function countDays($new_date)
     // {
@@ -41,7 +41,7 @@ class Order
         $date = date('Y-m-d');
         $shipping_date = date('Y-m-d', strtotime(' + 5 days'));
 
-        $stmt = $this->db->prepare('INSERT INTO orders (first_name, last_name, email, address, order_date) 
+        $stmt = $this->db->prepare('INSERT INTO batman.order (first_name, last_name, email, address, order_date) 
         VALUES (:first_name, :last_name, :email, :address, :order_date);');
 
         $stmt->execute([
@@ -56,7 +56,7 @@ class Order
 
         foreach($my_array as $key => $value)
         {
-            $stmt = $this->db->prepare('INSERT INTO orders_items (order_id, product_id, shipping_date) 
+            $stmt = $this->db->prepare('INSERT INTO batman.order_items (order_id, product_id, shipping_date) 
             VALUES (:order_id, :product_id, :shipping_date);');
             $stmt->execute([
 				':order_id' => $id_order,
@@ -64,7 +64,7 @@ class Order
                 ':shipping_date' => $shipping_date,
 			]);
         }
-        //header("Location:confirm_order.php");
+        header("Location:confirm_order.php");
     }
 }
 ?>

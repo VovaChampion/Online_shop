@@ -29,3 +29,9 @@
 	<h1 id="company_name" class="company_name"> 
 	<a href="index.php" onclick="deleteCookie();" style="color: black;text-decoration: none;"> LikeBatman <img src="https://img.icons8.com/office/40/000000/batman-old.png"></a></h1><br>
 	<!-- style="margin-bottom:-8px;" -->
+
+	<!-- MARK shopping cart on the top -->
+    <div class="cart-red" onclick="showCart('shopping_cart');">
+        <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+        <span id="itemCount">0</span>
+    </div>   

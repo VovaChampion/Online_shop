@@ -2,6 +2,7 @@
 require_once('lib/config.php');
 require_once('lib/common.php');
 require_once('lib/product_class.php');
+require_once('lib/order_class.php');
 
 $product = new Product();
 $rows = $product->getProducts();
@@ -17,7 +18,7 @@ setcookie('cross-site-cookie', 'bar', ['samesite' => 'None', 'secure' => true]);
     if (isset($_COOKIE['cart'])) {
         $cart_array = json_decode(stripslashes($_COOKIE['cart']),true);
         // echo '<h4>Cart</h4>';
-        // var_dump($cart_array);
+        var_dump($cart_array);
     }
 ?>
 
@@ -47,12 +48,12 @@ if(isset($_POST['create_order']))
 <?php include "templates/header.php"; ?>
 
 <!-- MARK shopping cart on the top -->
-    <a href="#top">
+    <!-- <a href="#top">
         <div class="cart-red" onclick="showCart('shopping_cart');">
             <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
             <span id="itemCount">0</span>
         </div>  
-    </a>
+    </a> -->
 
     <!-- Shopping cart -->
     <div id="shopping_cart">
