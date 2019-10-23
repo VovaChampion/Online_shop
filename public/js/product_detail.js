@@ -24,7 +24,6 @@ window.addEventListener("load", function() {
 
     
     document.querySelector("#big-display-1").addEventListener("click",bigImageClick);
-    //document.querySelector(".material-icons").addEventListener("click",bigImageClick);
     document.querySelector("#overlay").addEventListener("click",removeOverlay);
 
     document.addEventListener("keydown", keyListener);
