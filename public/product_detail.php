@@ -17,7 +17,6 @@ $images = $id->selectImages($product_id);
 
 //var_dump($images);
 
-
 ?>
 
 <?php include "templates/header.php"; ?>
