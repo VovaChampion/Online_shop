@@ -12,7 +12,7 @@ require_once('lib/product_class.php');
     $total = $con->query('SELECT COUNT(*) FROM products')->fetchColumn();
 
     // How many items to list per page
-    $limit = 4;
+    $limit = 3;
 
     // How many pages will there be
     $pages = ceil($total / $limit);
@@ -85,6 +85,9 @@ require_once('lib/product_class.php');
             }
         ?>
     </section>
-    <?php 
-    // Display the paging information
-    echo '<div id="paging"><p>', $prevlink, ' Page ', $page, ' of ', $pages, ' pages, displaying ', $start, '-', $end, ' of ', $total, ' results ', $nextlink, ' </p></div>';?>
+
+    <div class="num_pages">
+        <?php 
+        // Display the paging information
+        echo '<div id="paging"><p>', $prevlink, ' Page ', $page, ' of ', $pages, ' pages, displaying ', $start, '-', $end, ' of ', $total, ' results ', $nextlink, ' </p></div>';?>
+    </div>
