@@ -48,35 +48,45 @@ if(isset($_POST['create_order']))
             <strong class="cart-total-title">Total</strong>
             <span class="cart-total-price">SEK 0</span>
         </div>
-        <button class="btn btn-primary btn-purchase" type="button" onclick="formToggle('my_form');">CheckOut</button>   
-    </section> 
+        <button class="btn btn-primary btn-purchase" type="button" onclick="formToggle('payment-form');">CheckOut</button>   
+    
 
     <!-- Check out -->
-    <form id="my_form" method="post"><br>
-        <div class="input-group mb-3">
-            <input type="text" name="user_first_name" placeholder="Your First Name" required><br>
-            <div class="input-group-prepend">
-                <span class="input-group-text">John</span>
+        <form id="payment-form" method="post"><br>
+            <div class="input-group mb-3">
+                <input type="text" name="user_first_name" placeholder="Your First Name" required><br>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">John</span>
+                </div>
             </div>
-        </div>
-        <div class="input-group mb-3">
-            <input type="text" name="user_last_name" placeholder="Your Last Name" required><br>
-            <div class="input-group-prepend">
-                <span class="input-group-text">Doe</span>
+            <div class="input-group mb-3">
+                <input type="text" name="user_last_name" placeholder="Your Last Name" required><br>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Doe</span>
+                </div>
             </div>
-        </div>
-        <div class="input-group mb-3">
-            <input type="email" name="user_email" placeholder="Your Email" required>
-            <div class="input-group-append">
-                <span class="input-group-text">doe@gmail.com</span>
+            <div class="input-group mb-3">
+                <input type="email" name="user_email" placeholder="Your Email" required>
+                <div class="input-group-append">
+                    <span class="input-group-text">doe@gmail.com</span>
+                </div>
             </div>
-        </div>
-        <div class="input-group mb-3">
-            <input type="text" name="user_address" placeholder="Your Address" required>
-            <div class="input-group-append">
-                <span class="input-group-text">Street 1</span>
+            <div class="input-group mb-3">
+                <input type="text" name="user_address" placeholder="Your Address" required>
+                <div class="input-group-append">
+                    <span class="input-group-text">Street 1</span>
+                </div>
             </div>
-        </div>
-        <button class="btn btn-success" name="create_order" value="Submit">Submit</button>
-    </form>
+            <label for="card-element">Credit or debit card</label>
+                <div id="card-element">
+                <!-- a Stripe Element will be inserted here. -->
+                </div>
+                <!-- Used to display form errors -->
+                <div id="card-errors"></div>
+            <button class="btn btn-success" name="create_order" value="Submit">Submit</button>
+        </form>
+    </section> 
 </div> 
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="js/charge.js"></script>

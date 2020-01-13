@@ -72,7 +72,7 @@ h1.company_name{
 	margin-bottom: 20px;
 	border-radius: 8px;
 }
-#my_form {
+#payment-form {
 	display: none;
 	min-width: 500px;
 }
@@ -516,4 +516,32 @@ html, body {
 	text-align: center;
 	font-size: 20px;
 	font-weight:900;
+}
+
+/* Stripe */
+.StripeElement {
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+#payment-form {
+    width: 50%;
+}
+
+#card-element {
+    width: 100%;
 }

@@ -66,5 +66,179 @@ class Order
         }
         header("Location:confirm_order.php");
     }
+
+    // // create a new order
+    // public function createOrder($name,$email,$phone)
+    // {
+    //     $date = date('Y-m-d H:i:s');
+    //     $amount = 99;
+        
+    //     $stmt = $this->db->prepare('INSERT INTO orders (name, email, phone, amount, date) 
+    //     VALUES (:name, :email, :phone, :amount, :date);');
+        
+    //     $stmt->execute([
+    //         ':name' => $name, 
+    //         ':email' => $email,
+    //         ':phone' => $phone, 
+    //         ':amount' => $amount,
+    //         ':date' => $date
+    //     ]);
+
+    //     // $id_order = $this->db->lastInsertId(); 
+    //     // return $id_order;
+        
+    //     header("Location:confirm.php");
+    // }
+
+    public function sendStripe($name,$email,$phone)
+    {
+        require_once('vendor/stripe/stripe-php/init.php');
+        \Stripe\Stripe::setApiKey('sk_test_Y5Fm9BboJjOtQwUFG4N7AzTk'); //YOUR_STRIPE_SECRET_KEY
+
+        $token = (isset($_POST['stripeToken'])) ? $_POST['stripeToken'] : null;
+
+        $name_last = "Bryant";
+        $address = "Vasagatan";
+        $state = "Stockholm";
+        $zip = "12050";
+        $country = "Sweden";
+        $user_info = [
+            'First Name' => $name,
+            'Last Name' => $name_last,
+            'Address' => $address,
+            'State' => $state,
+            'Zip Code' => $zip,
+            'Country' => $country,
+            'Phone' => $phone
+        ];
+
+        //$customer_id = 'cus_F9f2G6ZrRU7K8L';
+        if (isset($customer_id)) 
+        {
+            try {
+                // Use Stripe's library to make requests...
+                $customer = \Stripe\Customer::retrieve($customer_id);
+            } catch (\Stripe\Error\Card $e) {
+                // Since it's a decline, \Stripe\Error\Card will be caught
+                $body = $e->getJsonBody();
+                $err  = $body['error'];
+
+                $msg = "<div class='alert alert-danger'><ul>";
+                $msg .= "<li>Status is: " . $e->getHttpStatus();" </li>";
+                // $msg .= "<li>Type is: " . $err['type'];" </li>";
+                // $msg .= "<li>Code is: " . $err['code'];" </li>";
+                // $msg .= "<li>Param is: " . $err['param'];" </li>"; 
+                $msg .= "<li>Message is: " . $err['message'];" </li>";      
+                $msg .= "</ul></div>";
+                echo $msg;
+
+            } catch (\Stripe\Error\RateLimit $e) {
+                // Too many requests made to the API too quickly
+            } catch (\Stripe\Error\InvalidRequest $e) {
+                // Invalid parameters were supplied to Stripe's API
+            } catch (\Stripe\Error\Authentication $e) {
+                // Authentication with Stripe's API failed
+                // (maybe you changed API keys recently)
+            } catch (\Stripe\Error\ApiConnection $e) {
+                // Network communication with Stripe failed
+            } catch (\Stripe\Error\Base $e) {
+                // Display a very generic error to the user, and maybe send
+                // yourself an email
+            } catch (Exception $e) {
+                // Something else happened, completely unrelated to Stripe
+            }
+        } else {
+            try {
+                // Use Stripe's library to make requests...
+                $customer = \Stripe\Customer::create(array(
+                    'email' => $email,
+                    'source' => $token,
+                    'metadata' => $user_info,
+                ));
+            } catch (\Stripe\Error\Card $e) {
+                // Since it's a decline, \Stripe\Error\Card will be caught
+                $body = $e->getJsonBody();
+                $err  = $body['error'];
+
+                $msg = "<div class='alert alert-danger'><ul>";
+                $msg .= "<li>Status is: " . $e->getHttpStatus();" </li>";
+                // $msg .= "<li>Type is: " . $err['type'];" </li>";
+                // $msg .= "<li>Code is: " . $err['code'];" </li>";
+                // $msg .= "<li>Param is: " . $err['param'];" </li>"; 
+                $msg .= "<li>Message is: " . $err['message'];" </li>";      
+                $msg .= "</ul></div>";
+                
+                echo $msg;
+
+            } catch (\Stripe\Error\RateLimit $e) {
+                // Too many requests made to the API too quickly
+            } catch (\Stripe\Error\InvalidRequest $e) {
+                // Invalid parameters were supplied to Stripe's API
+            } catch (\Stripe\Error\Authentication $e) {
+                // Authentication with Stripe's API failed
+                // (maybe you changed API keys recently)
+            } catch (\Stripe\Error\ApiConnection $e) {
+                // Network communication with Stripe failed
+            } catch (\Stripe\Error\Base $e) {
+                // Display a very generic error to the user, and maybe send
+                // yourself an email
+            } catch (Exception $e) {
+                // Something else happened, completely unrelated to Stripe
+            }
+        }
+
+        if (isset($customer)) 
+        {
+            //print_r($customer);
+            $charge_customer = true;
+
+            // Save the customer in your own database!
+            $this->createOrder($name,$email,$phone);
+
+            // Charge the Customer instead of the card
+            try {
+                // Use Stripe's library to make requests...
+                $charge = \Stripe\Charge::create(array(
+                    'amount' => 9900,
+                    'description' => 'Books',
+                    'currency' => 'sek',
+                    'customer' => $customer->id,
+                    'metadata' => $user_info
+                ));
+            } catch (\Stripe\Error\Card $e) {
+                // Since it's a decline, \Stripe\Error\Card will be caught
+                $body = $e->getJsonBody();
+                $err  = $body['error'];
+                $msg = "<div class='alert alert-danger'><ul>";
+                $msg .= "<li>Status is: " . $e->getHttpStatus();" </li>";
+                // $msg .= "<li>Type is: " . $err['type'];" </li>";
+                // $msg .= "<li>Code is: " . $err['code'];" </li>";
+                // $msg .= "<li>Param is: " . $err['param'];" </li>"; 
+                $msg .= "<li>Message is: " . $err['message'];" </li>";      
+                $msg .= "</ul></div>";
+                echo $msg;
+
+                $charge_customer = false;
+            } catch (\Stripe\Error\RateLimit $e) {
+                // Too many requests made to the API too quickly
+            } catch (\Stripe\Error\InvalidRequest $e) {
+                // Invalid parameters were supplied to Stripe's API
+            } catch (\Stripe\Error\Authentication $e) {
+                // Authentication with Stripe's API failed
+                // (maybe you changed API keys recently)
+            } catch (\Stripe\Error\ApiConnection $e) {
+                // Network communication with Stripe failed
+            } catch (\Stripe\Error\Base $e) {
+                // Display a very generic error to the user, and maybe send
+                // yourself an email
+            } catch (Exception $e) {
+                // Something else happened, completely unrelated to Stripe
+            }
+            if ($charge_customer) 
+            {
+                //print_r($charge);
+            }
+        }
+    }
 }
 ?>
