@@ -3,11 +3,11 @@ require_once('lib/config.php');
 require_once('lib/common.php');
 require_once('lib/product_class.php');
 
-    try {
-    
+try {
+
     $db = new Db();
     $con=$db->connect();
-    
+
     // Find out how many items are in the table
     $total = $con->query('SELECT COUNT(*) FROM products')->fetchColumn();
 
@@ -49,14 +49,14 @@ require_once('lib/product_class.php');
     $stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
     $stmt->execute();
 
-        // Do we have any results?
-        if ($stmt->rowCount() > 0) {
-        // Define how we want to fetch the results
-        $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        $iterator = new IteratorIterator($stmt);
+    // Do we have any results?
+    if ($stmt->rowCount() > 0) {
+    // Define how we want to fetch the results
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $iterator = new IteratorIterator($stmt);
 
-        $product = new Product();
-        $rows = $product->getProducts();
+    $product = new Product();
+    $rows = $product->getProducts();
 ?>
     <!-- Products -->
     <section class="container content-section">

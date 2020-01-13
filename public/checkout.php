@@ -12,7 +12,8 @@ require_once('lib/order_class.php');
 $products = new Product();
 $rows = $products->getProducts();
 
-if(isset($_POST['create_order'])) 
+// Create an order
+if(isset($_POST['stripeToken'])) 
 {
     $user_first_name = filter_input(INPUT_POST, 'user_first_name', FILTER_SANITIZE_MAGIC_QUOTES);
     $user_last_name = filter_input(INPUT_POST, 'user_last_name', FILTER_SANITIZE_MAGIC_QUOTES);
@@ -27,7 +28,7 @@ if(isset($_POST['create_order']))
     var_dump($my_array);
 
     $stmt = new Order();
-    $result = $stmt->createOrder($user_first_name,$user_last_name,$user_email,$user_address,$my_array);
+    $result = $stmt->sendStripe($user_first_name,$user_last_name,$user_email,$user_address,$my_array);
 }   
 
 ?>
