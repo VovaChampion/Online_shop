@@ -90,22 +90,23 @@ class Order
     //     header("Location:confirm.php");
     // }
 
-    public function sendStripe($name,$email,$phone)
+    public function sendStripe($user_first_name,$user_last_name,$user_email,$user_address,$my_array)
     {
-        require_once('vendor/stripe/stripe-php/init.php');
+        require_once('../vendor/stripe/stripe-php/init.php');
         \Stripe\Stripe::setApiKey('sk_test_Y5Fm9BboJjOtQwUFG4N7AzTk'); //YOUR_STRIPE_SECRET_KEY
 
         $token = (isset($_POST['stripeToken'])) ? $_POST['stripeToken'] : null;
 
-        $name_last = "Bryant";
-        $address = "Vasagatan";
+        // $name_last = "Bryant";
+        // $address = "Odenplan";
         $state = "Stockholm";
         $zip = "12050";
         $country = "Sweden";
+        $phone = "0732223344";
         $user_info = [
-            'First Name' => $name,
-            'Last Name' => $name_last,
-            'Address' => $address,
+            'First Name' => $user_first_name,
+            'Last Name' => $user_last_name,
+            'Address' => $user_address,
             'State' => $state,
             'Zip Code' => $zip,
             'Country' => $country,
@@ -151,7 +152,7 @@ class Order
             try {
                 // Use Stripe's library to make requests...
                 $customer = \Stripe\Customer::create(array(
-                    'email' => $email,
+                    'email' => $user_email,
                     'source' => $token,
                     'metadata' => $user_info,
                 ));
@@ -193,13 +194,13 @@ class Order
             $charge_customer = true;
 
             // Save the customer in your own database!
-            $this->createOrder($name,$email,$phone);
+            $this->createOrder($user_first_name,$user_last_name,$user_email,$user_address,$my_array);
 
             // Charge the Customer instead of the card
             try {
                 // Use Stripe's library to make requests...
                 $charge = \Stripe\Charge::create(array(
-                    'amount' => 9900,
+                    'amount' => 9900, //?????
                     'description' => 'Books',
                     'currency' => 'sek',
                     'customer' => $customer->id,

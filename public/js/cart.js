@@ -143,5 +143,5 @@ function updateCartTotal()
     total = Math.round(total * 100)/100
     document.getElementById('itemCount').innerText = totalQuantity;
     document.getElementsByClassName('cart-total-price')[0].innerText = 'SEK' +' '+ total;
-    console.log(cart)
+    //console.log(cart)
 }
