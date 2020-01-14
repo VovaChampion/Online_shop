@@ -49,60 +49,6 @@ setcookie('cross-site-cookie', 'bar', ['samesite' => 'None', 'secure' => true]);
 
 <!-- MARK shopping cart on the top -->
 <?php include "checkout.php"; ?>
-    <!-- <a href="#top">
-        <div class="cart-red" onclick="showCart('shopping_cart');">
-            <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-            <span id="itemCount">0</span>
-        </div>  
-    </a> -->
-
-    <!-- Shopping cart -->
-    <!-- <div id="shopping_cart">
-        <section class="container content-section">
-            <h2 class="section-header">Shopping cart</h2>
-            <div class="cart-row">
-                <span class="cart-item cart-header cart-column">Title</span>
-                <span class="cart-price cart-header cart-column">Price</span>
-                <span class="cart-quantity cart-header cart-column">Quantity</span>
-            </div>
-            <div class="cart-items">
-            </div>
-            <div class="cart-total">
-                <strong class="cart-total-title">Total</strong>
-                <span class="cart-total-price">SEK 0</span>
-            </div>
-            <button class="btn btn-primary btn-purchase" type="button" onclick="formToggle('my_form');">CheckOut</button>   
-        </section>  -->
-
-<!-- Check out -->
-        <!-- <form id="my_form" method="post"><br>
-            <div class="input-group mb-3">
-                <input type="text" name="user_first_name" placeholder="Your First Name" required><br>
-                <div class="input-group-prepend">
-                    <span class="input-group-text">John</span>
-                </div>
-            </div>
-            <div class="input-group mb-3">
-                <input type="text" name="user_last_name" placeholder="Your Last Name" required><br>
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Doe</span>
-                </div>
-            </div>
-            <div class="input-group mb-3">
-                <input type="email" name="user_email" placeholder="Your Email" required>
-                <div class="input-group-append">
-                    <span class="input-group-text">doe@gmail.com</span>
-                </div>
-            </div>
-            <div class="input-group mb-3">
-                <input type="text" name="user_address" placeholder="Your Address" required>
-                <div class="input-group-append">
-                    <span class="input-group-text">Street 1</span>
-                </div>
-            </div>
-            <button class="btn btn-success" name="create_order" value="Submit">Submit</button>
-        </form>
-    </div>  -->
 
 <!-- Products -->
 <?php include "page.php"; ?>

@@ -6,11 +6,12 @@ require_once('lib/order_class.php');
 
 ?>
 
-<!-- Create an order -->
 <?php
 
 $products = new Product();
 $rows = $products->getProducts();
+
+// $msg = NULL;
 
 // Create an order
 if(isset($_POST['stripeToken'])) 
@@ -25,7 +26,7 @@ if(isset($_POST['stripeToken']))
         $product_id = (int)$value['id'];
         $my_array [] = $product_id;
     }
-    var_dump($my_array);
+    // var_dump($my_array);
 
     $stmt = new Order();
     $result = $stmt->sendStripe($user_first_name,$user_last_name,$user_email,$user_address,$my_array);

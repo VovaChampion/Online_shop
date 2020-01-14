@@ -74,6 +74,7 @@ h1.company_name{
 }
 #payment-form {
 	display: none;
+	width: 50%;
 	min-width: 500px;
 }
 
@@ -538,9 +539,9 @@ html, body {
     background-color: #fefde5 !important;
 }
 
-#payment-form {
+/* #payment-form {
     width: 50%;
-}
+} */
 
 #card-element {
     width: 100%;
