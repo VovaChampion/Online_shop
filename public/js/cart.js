@@ -46,6 +46,7 @@ function quantityChanged(event)
         input.value = 1
     }
     updateCartTotal()
+    getTotalPrice()
 }
 
 function getCookie(name) 
@@ -72,6 +73,7 @@ function addToCartClicked(event)
 
    addItemToCart(title, price, imageSrc, id, qty)
    updateCartTotal()
+   getTotalPrice()
 } 
 
 function addItemToCart(title, price, imageSrc, id, qty) //qty = 1, 
@@ -143,5 +145,41 @@ function updateCartTotal()
     total = Math.round(total * 100)/100
     document.getElementById('itemCount').innerText = totalQuantity;
     document.getElementsByClassName('cart-total-price')[0].innerText = 'SEK' +' '+ total;
-    //console.log(cart)
+    //console.log(total)
+    
+    // create hidden element for Stripe with total price
+    
+    /*
+    let totalPrice = document.createElement('p');
+    totalPrice.innerHTML = total;
+
+    let hiddenElem = document.getElementById('payment-form');
+    hiddenElem.appendChild(totalPrice);
+    */
+    
+    // let hiddenElements = document.getElementById('payment-form').getElementsByTagName('p');
+    // let lastChild = hiddenElements[hiddenElements.length - 1]
+    // console.log(lastChild); 
+
+}
+
+function getTotalPrice()
+{
+    console.log('Get total');
+    const myList = document.getElementsByClassName('cart-total-price')[0].lastChild;
+    
+    const totalPrice = myList.cloneNode(true);
+    //console.log(totalPrice);
+
+    const addPrice = document.getElementById('totalPrice').appendChild(totalPrice);
+
+    //console.log(addPrice);
+    // const myList = document.getElementsByClassName("cart-total-price");
+    // console.log(myList);
+    // const listChildren = myList.children;
+
+    // const total = listChildren[0];
+    // console.log(total);
+    // const totalPrice = total.cloneNode(true);
+    // console.log(totalPrice);
 }
