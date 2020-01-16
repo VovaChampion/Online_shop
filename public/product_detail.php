@@ -81,5 +81,5 @@ $images = $id->selectImages($product_id);
             </section>
         </div>
     </main>
-
+    <script src="js/product_detail.js"></script>
 <?php include "templates/footer.php"; ?>
