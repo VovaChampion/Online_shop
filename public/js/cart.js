@@ -146,22 +146,6 @@ function updateCartTotal()
     total = Math.round(total * 100)/100
     document.getElementById('itemCount').innerText = totalQuantity;
     document.getElementsByClassName('cart-total-price')[0].innerText = 'SEK' +' '+ total;
-    //console.log(total)
-    
-    // create hidden element for Stripe with total price
-    
-    /*
-    let totalPrice = document.createElement('p');
-    totalPrice.innerHTML = total;
-
-    let hiddenElem = document.getElementById('payment-form');
-    hiddenElem.appendChild(totalPrice);
-    */
-    
-    // let hiddenElements = document.getElementById('payment-form').getElementsByTagName('p');
-    // let lastChild = hiddenElements[hiddenElements.length - 1]
-    // console.log(lastChild); 
-
 }
 
 function getTotalPrice()
@@ -170,13 +154,10 @@ function getTotalPrice()
     const myList = document.getElementsByClassName('cart-total-price')[0].lastChild;
     
     const totalPrice = myList.cloneNode(true);
-    //console.log(totalPrice.textContent);
 
     const splitat = totalPrice.textContent.split(" ");
     const totalPriceNum = Number(splitat[1]);
-    console.log(totalPriceNum);
+    //console.log(totalPriceNum);
 
     document.getElementById("totalt").setAttribute("value", totalPriceNum)
-    
-    //value = totalPriceNum;
 }
