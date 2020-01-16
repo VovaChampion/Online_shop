@@ -22,35 +22,9 @@ setcookie('cross-site-cookie', 'bar', ['samesite' => 'None', 'secure' => true]);
     }
 ?>
 
-<!-- Create an order -->
-<?php
-// if(isset($_POST['create_order'])) 
-// {
-//     $user_first_name = filter_input(INPUT_POST, 'user_first_name', FILTER_SANITIZE_MAGIC_QUOTES);
-//     $user_last_name = filter_input(INPUT_POST, 'user_last_name', FILTER_SANITIZE_MAGIC_QUOTES);
-//     $user_email = filter_input(INPUT_POST, 'user_email', FILTER_SANITIZE_EMAIL);
-//     $user_address = filter_input(INPUT_POST, 'user_address', FILTER_SANITIZE_MAGIC_QUOTES);
-    
-//     foreach($cart_array as $key => $value) 
-//     {
-//         $product_id = (int)$value['id'];
-//         $my_array [] = $product_id;
-//     }
-//     var_dump($my_array);
-
-//     $stmt = new Order();
-//     $result = $stmt->createOrder($user_first_name,$user_last_name,$user_email,$user_address,$my_array);
-// }   
-
-?>
-
-
 <?php include "templates/header.php"; ?>
 
-<!-- MARK shopping cart on the top -->
 <?php include "checkout.php"; ?>
-
-<!-- Products -->
 <?php include "page.php"; ?>
     <!-- <p>* - The product is valid in any direction on the selected line 1 month from the date of purchase.</p> -->
 </div>

@@ -12,7 +12,7 @@ try {
     $total = $con->query('SELECT COUNT(*) FROM products')->fetchColumn();
 
     // How many items to list per page
-    $limit = 3;
+    $limit = 6;
 
     // How many pages will there be
     $pages = ceil($total / $limit);

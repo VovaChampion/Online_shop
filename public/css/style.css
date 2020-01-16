@@ -105,6 +105,7 @@ button[type="submit"] {
   
 .main-nav li {
 	margin: 0; 
+	min-width: 130px;
 }
   
 .nav-links {
@@ -116,7 +117,8 @@ button[type="submit"] {
   
 .logo {
 	display: inline-block;
-	margin-left: 30px; 
+	margin-left: 30px;
+	visibility: hidden;
 }
   
 .navbar-toggle {
@@ -371,12 +373,6 @@ form.example::after {
 }
 
 /*
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-}
-
 .nav ul {
     margin: 0;
 }
@@ -394,9 +390,9 @@ html, body {
 
 
 
-.content-section {
-    margin: 1em;
-}
+/* .content-section {
+    margin: 2px;
+} */
 
 .section-header {
     font-family: "Metal Mania";
@@ -648,6 +644,8 @@ html, body {
     width: 100%;
 }
 
+/* Facebook  */
+
 .fb-like span {
 	width: 200px!important;
 }
@@ -667,10 +665,6 @@ iframe{
 		font-size: 30px;
 		/* margin-top: -40px; */
 	}
-  
-	.active {
-		margin-top: -20px; 
-	} 
 }
 @media screen and (max-width: 500px) {
 	.header {
@@ -736,6 +730,7 @@ iframe{
 		top: 60px;
 		background: rgb(209, 69, 64);
 		transition: 0.5s; 
+		left:0px;
 	}
   
 	ul li ul {
