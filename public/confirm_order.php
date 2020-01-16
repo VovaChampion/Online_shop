@@ -14,7 +14,8 @@ $order_id = $id->getLastOrderId();
 <div class="container">
     <h1> Thank you for your order number: <?php echo $order_id; ?></h1><br>
 
-<a href="index.php" class="btn btn-primary" onclick="deleteCookie();" role="button">Go shopping</a><br>
+    <a href="index.php" class="btn btn-primary" onclick="deleteCookie();" role="button">Go shopping</a><br>
+</div>
 <!-- <a href="checkin.php" class="btn btn-primary" onclick="deleteCookie();" role="button">Go to Check In page</a><br> -->
 
 <?php include "templates/footer.php"; ?>

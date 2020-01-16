@@ -67,30 +67,7 @@ class Order
         header("Location:confirm_order.php");
     }
 
-    // // create a new order
-    // public function createOrder($name,$email,$phone)
-    // {
-    //     $date = date('Y-m-d H:i:s');
-    //     $amount = 99;
-        
-    //     $stmt = $this->db->prepare('INSERT INTO orders (name, email, phone, amount, date) 
-    //     VALUES (:name, :email, :phone, :amount, :date);');
-        
-    //     $stmt->execute([
-    //         ':name' => $name, 
-    //         ':email' => $email,
-    //         ':phone' => $phone, 
-    //         ':amount' => $amount,
-    //         ':date' => $date
-    //     ]);
-
-    //     // $id_order = $this->db->lastInsertId(); 
-    //     // return $id_order;
-        
-    //     header("Location:confirm.php");
-    // }
-
-    public function sendStripe($user_first_name,$user_last_name,$user_email,$user_address,$my_array)
+    public function sendStripe($user_first_name,$user_last_name,$user_email,$user_address,$my_array,$total_amount)
     {
         require_once('../vendor/stripe/stripe-php/init.php');
         \Stripe\Stripe::setApiKey('sk_test_Y5Fm9BboJjOtQwUFG4N7AzTk'); //YOUR_STRIPE_SECRET_KEY
@@ -110,7 +87,8 @@ class Order
             'State' => $state,
             'Zip Code' => $zip,
             'Country' => $country,
-            'Phone' => $phone
+            'Phone' => $phone,
+            'Amount' => $total_amount
         ];
 
         //$customer_id = 'cus_F9f2G6ZrRU7K8L';
@@ -199,13 +177,16 @@ class Order
             // Charge the Customer instead of the card
             try {
                 // Use Stripe's library to make requests...
+                $mult = 100;
+                $sum = $user_info['Amount'] * $mult;
                 $charge = \Stripe\Charge::create(array(
-                    'amount' => 9900, //?????
+                    'amount' => $sum,
                     'description' => 'Books',
                     'currency' => 'sek',
                     'customer' => $customer->id,
                     'metadata' => $user_info
                 ));
+
             } catch (\Stripe\Error\Card $e) {
                 // Since it's a decline, \Stripe\Error\Card will be caught
                 $body = $e->getJsonBody();

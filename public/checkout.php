@@ -20,6 +20,7 @@ if(isset($_POST['stripeToken']))
     $user_last_name = filter_input(INPUT_POST, 'user_last_name', FILTER_SANITIZE_MAGIC_QUOTES);
     $user_email = filter_input(INPUT_POST, 'user_email', FILTER_SANITIZE_EMAIL);
     $user_address = filter_input(INPUT_POST, 'user_address', FILTER_SANITIZE_MAGIC_QUOTES);
+    $total_amount = filter_input(INPUT_POST, 'total_amount', FILTER_SANITIZE_NUMBER_INT);
     
     foreach($cart_array as $key => $value) 
     {
@@ -27,9 +28,11 @@ if(isset($_POST['stripeToken']))
         $my_array [] = $product_id;
     }
     // var_dump($my_array);
+    // var_dump($total_amount);
+    // die;
 
     $stmt = new Order();
-    $result = $stmt->sendStripe($user_first_name,$user_last_name,$user_email,$user_address,$my_array);
+    $result = $stmt->sendStripe($user_first_name,$user_last_name,$user_email,$user_address,$my_array,$total_amount);
 }   
 
 ?>
@@ -79,6 +82,19 @@ if(isset($_POST['stripeToken']))
                     <span class="input-group-text">Street 1</span>
                 </div>
             </div>
+
+            <!-- Total amount  -->
+            <div class="input-group mb-3">
+                <input type="number" name="total_amount" id="totalt"  value="0" required>
+            </div>
+
+            <!-- <div id="totalPrice">
+                <input type="number" name="total_amount">
+             <div hidden class="cart-total"> -->
+                <!-- <strong class="cart-total-title">Total</strong> -->
+                <!-- <span class="cart-total-price">SEK 0</span> -->
+            <!-- </div> -->
+
             <label for="card-element">Credit or debit card</label>
                 <div id="card-element">
                 <!-- a Stripe Element will be inserted here. -->
@@ -86,6 +102,7 @@ if(isset($_POST['stripeToken']))
                 <!-- Used to display form errors -->
                 <div id="card-errors"></div>
             <button class="btn btn-success" name="create_order" value="Submit">Submit</button>
+            
         </form>
     </section> 
 </div> 

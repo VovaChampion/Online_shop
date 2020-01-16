@@ -36,6 +36,7 @@ function removeCartItem(event)
     let buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
     updateCartTotal()
+    getTotalPrice()
 }
 
 function quantityChanged(event)
@@ -46,6 +47,7 @@ function quantityChanged(event)
         input.value = 1
     }
     updateCartTotal()
+    getTotalPrice()
 }
 
 function getCookie(name) 
@@ -72,6 +74,7 @@ function addToCartClicked(event)
 
    addItemToCart(title, price, imageSrc, id, qty)
    updateCartTotal()
+   getTotalPrice()
 } 
 
 function addItemToCart(title, price, imageSrc, id, qty) //qty = 1, 
@@ -143,5 +146,18 @@ function updateCartTotal()
     total = Math.round(total * 100)/100
     document.getElementById('itemCount').innerText = totalQuantity;
     document.getElementsByClassName('cart-total-price')[0].innerText = 'SEK' +' '+ total;
-    //console.log(cart)
+}
+
+function getTotalPrice()
+{
+    console.log('Get total');
+    const myList = document.getElementsByClassName('cart-total-price')[0].lastChild;
+    
+    const totalPrice = myList.cloneNode(true);
+
+    const splitat = totalPrice.textContent.split(" ");
+    const totalPriceNum = Number(splitat[1]);
+    //console.log(totalPriceNum);
+
+    document.getElementById("totalt").setAttribute("value", totalPriceNum)
 }
