@@ -19,11 +19,150 @@ th {
 	border-bottom: 1px solid #aaa;
 }
 
+.header {
+	background-color: rgb(189, 12, 6);
+}
+
+/* Search form */
+.search-form {
+	display: flex;
+	flex-wrap: wrap;
+	width: 50%;
+	margin-left: 50%; 
+}
+  
+input[type="search"] {
+	box-sizing: border-box;
+	background: white;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0.35em 0.75em;
+	border: none;
+	font-size: 20px;
+	text-decoration: none;
+	line-height: normal;
+	max-height: 3em; 
+}
+  
+button[type="submit"] {
+	box-sizing: border-box;
+	border-radius: 0px 2px 2px 0px;
+	background: rgb(230, 21, 14);
+	font-weight: 300;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.7);
+	padding: 0.35em 0.75em;
+	border: none;
+	font-size: 20px;
+	text-decoration: none;
+	cursor: pointer; 
+}
+  
+button[type="submit"]:hover {
+	background: rgb(133, 11, 6);
+	color: white; 
+}
+  
+input[type="search"] {
+	flex: 2 100px; 
+}
+  
+button[type="submit"] {
+	flex: 1 30px; 
+}
+/* Search form */
+
+/* Navigation bar */
+.navbar {
+	font-size: 20px;
+	background: rgb(209, 69, 64);
+	/* border: 1px solid rgba(20, 119, 199, 0.521); */
+	display: flex;
+	justify-content: space-between;
+	height: 60px;
+	align-items: center;
+	padding-bottom: 0; 
+}
+  
+.main-nav {
+	display: flex;
+	margin-right: 30px;
+	flex-direction: row;
+	justify-content: flex-end;
+	list-style-type: none; 
+	width: 50%;
+}
+  
+.main-nav li {
+	margin: 0; 
+}
+  
+.nav-links {
+	margin-left: 30px;
+	text-decoration: none;
+	color: rgba(5, 2, 2, 0.7);
+	position: relative;
+}
+  
+.logo {
+	display: inline-block;
+	margin-left: 30px; 
+}
+  
+.navbar-toggle {
+	display: none; 
+}
+  
+.logo:hover,
+.nav-links:hover {
+	color: white; 
+	text-decoration: none;
+}
+  
+li:focus-within a {
+	outline: none; 
+}
+  
+/* sub - menu */
+ul li ul {
+	display: none;
+	flex-direction: column;
+	list-style-type: none;
+	position: absolute;
+	background-color: rgb(209, 69, 64);
+	min-width: 150px;
+	z-index: 1;
+}
+  
+.dropdown a {
+	color: rgba(255, 255, 255, 0.7);
+	padding-top: 20px;
+	padding-bottom: 10px;
+	text-align: center;
+	text-decoration: none;
+	display: flex; 
+}
+  
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+	display: flex;
+	flex-direction: column; 
+}
+  
+ul li ul li {
+	clear: both;
+	width: 100%; 
+}
+/* sub - menu */
+
 h1.company_name{
 	/* color: rgb(232, 248, 140); */
-	margin: 5px;
+	/* margin: 5px;
+	height: 3em; */
 	text-align: left;
-	height: 3em;
 	padding: 1em 0 0 1em ;
 	background-color:  rgb(189, 12, 6);
 }
@@ -539,10 +678,106 @@ html, body {
     background-color: #fefde5 !important;
 }
 
-/* #payment-form {
-    width: 50%;
-} */
-
 #card-element {
     width: 100%;
+}
+
+@media screen and (max-width: 375px) {
+	/* .header h1 {
+	  font-size: 30px; 
+	} */
+  
+	.navbar-toggle {
+		font-size: 30px;
+		margin-top: -40px;
+	}
+  
+	.active {
+		margin-top: -20px; 
+	} 
+}
+@media screen and (max-width: 500px) {
+	.header {
+		padding-top: 0; 
+	}
+  
+	/* .product .product-item {
+		width: 100%; 
+	}
+  
+	.image_product {
+	  width: 60%; }
+   */
+	.search-form {
+		width: 100%; 
+	} 
+}
+
+@media screen and (max-width: 768px) {
+	body {
+		padding: 0;
+		margin: 0; 
+	}
+  
+	/* .header {
+		padding-top: 10px; 
+	} */
+  
+	/* .product {
+		-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+		margin: 0; 
+	}
+  
+	.product-item {
+		width: 100%;
+		padding: 0;
+		min-height: 250px; 
+	} */
+  
+	.main-nav {
+		display: none; 
+	}
+  
+	.main-nav li {
+		margin-left: -35px;
+		text-align: center;
+		padding: 10px;
+		border-top: 1px solid rgba(255, 255, 255, 0.3);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+	}
+  
+	.navbar-toggle {
+		display: inline-block;
+		position: absolute;
+		right: 20px;
+		cursor: pointer;
+		color: rgba(255, 255, 255, 0.7);
+		font-size: 50px; 
+	}
+  
+	.active {
+		display: block;
+		width: 100%;
+		position: absolute;
+		top: 67px;
+		background: rgb(209, 69, 64);
+		transition: 0.5s; 
+	}
+  
+	ul li ul {
+		width: 80%;
+		margin-top: 10px;
+		margin-left: -15px;
+		border-right-style: ridge; 
+	}
+  
+	.dropdown a {
+		padding: 0;
+	}
+	
+	.search-form {
+		width: 70%;
+		margin-left: 30%; 
+	} 
 }

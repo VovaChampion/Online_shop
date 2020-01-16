@@ -2,7 +2,15 @@
 
 window.addEventListener("load", function() 
 {
-  console.log("works");  
+  console.log("works");
+
+  //toggle navbar
+  let mainNav = document.getElementById("js-menu");
+  let navBarToggle = document.getElementById("js-navbar-toggle");
+
+  navBarToggle.addEventListener("click", function() {
+    mainNav.classList.toggle("active");
+  });  
 });
 
 

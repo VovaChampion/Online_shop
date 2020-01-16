@@ -36,6 +36,7 @@ function removeCartItem(event)
     let buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
     updateCartTotal()
+    // getTotalPrice()
 }
 
 function quantityChanged(event)
@@ -46,7 +47,7 @@ function quantityChanged(event)
         input.value = 1
     }
     updateCartTotal()
-    getTotalPrice()
+    // getTotalPrice()
 }
 
 function getCookie(name) 
@@ -73,7 +74,7 @@ function addToCartClicked(event)
 
    addItemToCart(title, price, imageSrc, id, qty)
    updateCartTotal()
-   getTotalPrice()
+//    getTotalPrice()
 } 
 
 function addItemToCart(title, price, imageSrc, id, qty) //qty = 1, 

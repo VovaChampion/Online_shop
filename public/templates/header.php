@@ -26,12 +26,36 @@
 </head>
 
 <body>
-	<h1 id="company_name" class="company_name"> 
-	<a href="index.php" onclick="deleteCookie();" style="color: black;text-decoration: none;"> LikeBatman <img src="https://img.icons8.com/office/40/000000/batman-old.png"></a></h1><br>
-	<!-- style="margin-bottom:-8px;" -->
+	<div class="header">
+		<h1 id="company_name" class="company_name"> 
+		<a href="index.php" onclick="deleteCookie();" style="color: black;text-decoration: none;"> LikeBatman <img src="https://img.icons8.com/office/40/000000/batman-old.png"></a></h1><br>
+		
+		<form class="search-form">
+			<input type="search" name="search" placeholder="Search ..." class="search-input">
+			<button type="submit" class="search-btn">Search</button>
+		</form>
 
-	<!-- MARK shopping cart on the top -->
-    <div class="cart-red" onclick="showCart('shopping_cart');">
-        <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-        <span id="itemCount">0</span>
-    </div>   
+		<!-- MARK shopping cart on the top -->
+		<div class="cart-red" onclick="showCart('shopping_cart');">
+			<i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+			<span id="itemCount">0</span>
+		</div>
+	</div>   
+
+	<nav class="navbar">
+		<span class="navbar-toggle" id="js-navbar-toggle"><i class="fas fa-bars"></i> </span>
+		<a href="#" class="logo"><img class="image_product" src="https://img.icons8.com/office/40/000000/batman-old.png" alt="batman"></a>
+		<ul class="main-nav" id="js-menu">
+			<li><a href="index.php" class="nav-links">Home</a></li>
+			<li><a href="#" class="nav-links">Products</a>
+				<ul class="dropdown" aria-label="submenu">
+					<li><a href="#">Sub-1</a></li>
+					<li><a href="#">Sub-2</a></li>
+					<li><a href="#">Sub-3</a></li>
+				</ul>
+			</li>
+			<li><a href="about.php" class="nav-links">About Us</a></li>
+			<li><a href="#" class="nav-links">Contact Us</a></li>
+			<li><a href="#" class="nav-links">Blog</a></li>
+		</ul>
+	</nav>
