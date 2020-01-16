@@ -36,7 +36,7 @@ function removeCartItem(event)
     let buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
     updateCartTotal()
-    // getTotalPrice()
+    getTotalPrice()
 }
 
 function quantityChanged(event)
@@ -47,7 +47,7 @@ function quantityChanged(event)
         input.value = 1
     }
     updateCartTotal()
-    // getTotalPrice()
+    getTotalPrice()
 }
 
 function getCookie(name) 
@@ -74,7 +74,7 @@ function addToCartClicked(event)
 
    addItemToCart(title, price, imageSrc, id, qty)
    updateCartTotal()
-//    getTotalPrice()
+   getTotalPrice()
 } 
 
 function addItemToCart(title, price, imageSrc, id, qty) //qty = 1, 
@@ -170,17 +170,13 @@ function getTotalPrice()
     const myList = document.getElementsByClassName('cart-total-price')[0].lastChild;
     
     const totalPrice = myList.cloneNode(true);
-    //console.log(totalPrice);
+    //console.log(totalPrice.textContent);
 
-    const addPrice = document.getElementById('totalPrice').appendChild(totalPrice);
+    const splitat = totalPrice.textContent.split(" ");
+    const totalPriceNum = Number(splitat[1]);
+    console.log(totalPriceNum);
 
-    //console.log(addPrice);
-    // const myList = document.getElementsByClassName("cart-total-price");
-    // console.log(myList);
-    // const listChildren = myList.children;
-
-    // const total = listChildren[0];
-    // console.log(total);
-    // const totalPrice = total.cloneNode(true);
-    // console.log(totalPrice);
+    document.getElementById("totalt").setAttribute("value", totalPriceNum)
+    
+    //value = totalPriceNum;
 }

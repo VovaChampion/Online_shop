@@ -84,14 +84,13 @@ if(isset($_POST['stripeToken']))
             </div>
 
             <!-- Total amount  -->
-
             <div class="input-group mb-3">
-                <input type="number" name="total_amount" value="100" required>
+                <input type="number" name="total_amount" id="totalt"  value="0" required>
             </div>
 
             <!-- <div id="totalPrice">
-                <input type="number" name="total_amount"> -->
-            <!-- <div hidden class="cart-total"> -->
+                <input type="number" name="total_amount">
+             <div hidden class="cart-total"> -->
                 <!-- <strong class="cart-total-title">Total</strong> -->
                 <!-- <span class="cart-total-price">SEK 0</span> -->
             <!-- </div> -->

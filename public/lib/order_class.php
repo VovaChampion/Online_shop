@@ -67,29 +67,6 @@ class Order
         header("Location:confirm_order.php");
     }
 
-    // // create a new order
-    // public function createOrder($name,$email,$phone)
-    // {
-    //     $date = date('Y-m-d H:i:s');
-    //     $amount = 99;
-        
-    //     $stmt = $this->db->prepare('INSERT INTO orders (name, email, phone, amount, date) 
-    //     VALUES (:name, :email, :phone, :amount, :date);');
-        
-    //     $stmt->execute([
-    //         ':name' => $name, 
-    //         ':email' => $email,
-    //         ':phone' => $phone, 
-    //         ':amount' => $amount,
-    //         ':date' => $date
-    //     ]);
-
-    //     // $id_order = $this->db->lastInsertId(); 
-    //     // return $id_order;
-        
-    //     header("Location:confirm.php");
-    // }
-
     public function sendStripe($user_first_name,$user_last_name,$user_email,$user_address,$my_array,$total_amount)
     {
         require_once('../vendor/stripe/stripe-php/init.php');
