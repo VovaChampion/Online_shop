@@ -1,4 +1,10 @@
 
+* {
+	box-sizing: border-box;
+	font-family: Raleway;
+    color: black;
+}
+
 body {
     background: whitesmoke;
 }
@@ -92,6 +98,9 @@ button[type="submit"] {
 	justify-content: flex-end;
 	list-style-type: none; 
 	width: 50%;
+	/* new style */
+    text-align: center;
+    font-weight: lighter;
 }
   
 .main-nav li {
@@ -159,9 +168,6 @@ ul li ul li {
 /* sub - menu */
 
 h1.company_name{
-	/* color: rgb(232, 248, 140); */
-	/* margin: 5px;
-	height: 3em; */
 	text-align: left;
 	padding: 1em 0 0 1em ;
 	background-color:  rgb(189, 12, 6);
@@ -169,7 +175,6 @@ h1.company_name{
 
 .container {
 	min-height: 300px;
-    /* background: rgb(134, 121, 121); */
     background: linear-gradient(to bottom, #33ccff 0%, #cc3300 100%);
 }
  
@@ -195,9 +200,6 @@ h1.company_name{
 	margin: 10px 5px;
 	font-weight: bolder;
 }
-.product-description{
-	margin: 5px;
-}
 
 .cart-action{
 	margin: 5px;
@@ -214,16 +216,11 @@ h1.company_name{
 #payment-form {
 	display: none;
 	width: 50%;
-	min-width: 500px;
+	min-width: 350px;
 }
 
 .btn-success{
 	font-size: 1.25em;
-}
-
-#new_ticket {
-	display: none;
-	min-width: 500px;
 }
 
 a {
@@ -234,16 +231,12 @@ a {
 	width: 100%;
 	height: 100%;
 }
-#promotion {
-	display: block;
-	margin-top: -20px;
-	margin-bottom: 5px;
-}
 
 .product-description{
 	border-top-style: dotted;
   	border-bottom-style: dotted;
 	border-width: 1px;
+	margin: 5px;
 }
 .btnAddAction{
 	display: flex;
@@ -262,7 +255,6 @@ footer {
 	margin: 5px;
 	margin-bottom: 1%;
 	text-align: left;
-	-height: 3em;
 	padding: 1em 0 0 1em ;
 	background-color: rgb(189, 12, 6);
 }
@@ -327,17 +319,6 @@ footer {
 }
 /* END mark shopping cart  */
 
-/* .ticket{
-	height:39px;
-	min-width: 100px;
-	background: rgb(232, 248, 140);
-	margin-bottom: 20px;
-}
-.submit_ticket{
-	padding: 5px;
-  	border-radius: 5px;
-} */
-
 .search{
 	margin:auto;
 	max-width:400px;
@@ -389,12 +370,7 @@ form.example::after {
     font-style: normal;
 }
 
-* {
-    box-sizing: border-box;
-    font-family: Raleway;
-    color: black;
-}
-
+/*
 html, body {
     margin: 0;
     padding: 0;
@@ -414,18 +390,9 @@ html, body {
     padding: .5em;
     color: white;
     text-decoration: none;
-}
+} */
 
-.main-nav {
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: lighter;
-    border-bottom: 1px solid rgba(255, 255, 255, .3)
-}
 
-.main-nav li {
-    padding: 0 5%;
-}
 
 .content-section {
     margin: 1em;
@@ -521,7 +488,6 @@ html, body {
 }
 
 .shop-item-price {
-    /* flex-grow: 1; */
 	color: black;
 	font-weight: bolder;
 	font-size: 20px;
@@ -682,14 +648,24 @@ html, body {
     width: 100%;
 }
 
+.fb-like span {
+	width: 200px!important;
+}
+iframe{
+	width: 200px!important;
+}
+
 @media screen and (max-width: 375px) {
 	/* .header h1 {
 	  font-size: 30px; 
 	} */
+	body {
+		width: 370px;
+	}
   
 	.navbar-toggle {
 		font-size: 30px;
-		margin-top: -40px;
+		/* margin-top: -40px; */
 	}
   
 	.active {
@@ -700,14 +676,11 @@ html, body {
 	.header {
 		padding-top: 0; 
 	}
-  
-	/* .product .product-item {
-		width: 100%; 
+
+	.cart-item-title {
+		display: none;
 	}
   
-	.image_product {
-	  width: 60%; }
-   */
 	.search-form {
 		width: 100%; 
 	} 
@@ -760,7 +733,7 @@ html, body {
 		display: block;
 		width: 100%;
 		position: absolute;
-		top: 67px;
+		top: 60px;
 		background: rgb(209, 69, 64);
 		transition: 0.5s; 
 	}
