@@ -5,12 +5,13 @@
 
 * {
 	box-sizing: border-box;
-	font-family: Raleway;
+	font-family: 'Permanent Marker', cursive;
     color: black;
 }
 
 body {
-    background: whitesmoke;
+	background: whitesmoke;
+	/* background: linear-gradient(to bottom, #33ccff 0%, #cc3300 100%); */
 }
 
 label {
@@ -112,7 +113,7 @@ button[type="submit"] {
   
 .main-nav li {
 	margin: 0; 
-	min-width: 130px;
+	min-width: 145px;
 }
   
 .nav-links {
@@ -163,6 +164,7 @@ ul li ul {
 	text-align: center;
 	text-decoration: none !important;
 	display: flex; 
+	margin-left: -10px;
 }
   
 ul li:hover > ul,
@@ -186,7 +188,7 @@ h1.company_name{
 }
 
 .container {
-	min-height: 300px;
+	min-height: 350px;
     background: linear-gradient(to bottom, #33ccff 0%, #cc3300 100%);
 }
  
@@ -382,30 +384,8 @@ form.example::after {
     font-style: normal;
 }
 
-/*
-.nav ul {
-    margin: 0;
-}
-
-.nav li {
-    display: inline;
-}
-
-.nav a {
-    display: inline-block;
-    padding: .5em;
-    color: white;
-    text-decoration: none;
-} */
-
-
-
-/* .content-section {
-    margin: 2px;
-} */
-
 .section-header {
-    font-family: "Metal Mania";
+    /* font-family: "Metal Mania"; */
     font-weight: normal;
     color: #333;
     text-align: center;

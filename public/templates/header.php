@@ -17,6 +17,7 @@
 	
 	
 	<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<script src="js/main.js"></script>
@@ -51,11 +52,11 @@
 				<ul class="dropdown" aria-label="submenu">
 					<li><a href="#">Cool products</a></li>
 					<li><a href="#">Best products</a></li>
-					<li><a href="#">Don't read this</a></li>
+					<li><a href="#">What's up!</a></li>
 				</ul>
 			</li>
 			<li><a href="about.php" class="nav-links">About Us</a></li>
-			<li><a href="#" class="nav-links">Contact Us</a></li>
+			<li><a href="about.php" class="nav-links">Contact Us</a></li>
 			<li><a href="#" class="nav-links">Blog</a></li>
 		</ul>
 	</nav>

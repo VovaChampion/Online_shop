@@ -1,6 +1,6 @@
 <footer>
     <div class="footer">
-        <p> <a href="#" class="menu_link">Kontact us: 555-55-55</a> </p>
+        <p> <a href="about.php" class="menu_link">Kontact us: 555-55-55</a> </p>
         
         <!-- Facebook like and share -->
         <p> <a href="#" class="menu_link">Follow us:</a>
