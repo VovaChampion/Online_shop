@@ -49,9 +49,9 @@
 			<li><a href="index.php" class="nav-links">Home</a></li>
 			<li><a href="#" class="nav-links">Products</a>
 				<ul class="dropdown" aria-label="submenu">
-					<li><a href="#">Sub-1</a></li>
-					<li><a href="#">Sub-2</a></li>
-					<li><a href="#">Sub-3</a></li>
+					<li><a href="#">Cool products</a></li>
+					<li><a href="#">Best products</a></li>
+					<li><a href="#">Don't read this</a></li>
 				</ul>
 			</li>
 			<li><a href="about.php" class="nav-links">About Us</a></li>
