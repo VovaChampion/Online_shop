@@ -66,9 +66,6 @@ function displayOverlayImageFromIndex(index) {
 function smallImagesClick(){
     currentIndex = parseInt(this.dataset.index);
     document.querySelector("#big-display-1").src = this.dataset.bigimgsrc;
-    /* let firstimg = document.querySelector(".first_img");
-    console.log(firstimg);
-    firstimg.style.display = "none";   */  
 }
 
 function bigImageClick() {

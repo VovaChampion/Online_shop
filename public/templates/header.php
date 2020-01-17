@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<script src="js/main.js"></script>
-	<script src="js/product_detail.js"></script>
+	<!-- <script src="js/product_detail.js"></script> -->
 	<script src="js/cart.js"></script>
 	<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
 </head>
@@ -49,9 +49,9 @@
 			<li><a href="index.php" class="nav-links">Home</a></li>
 			<li><a href="#" class="nav-links">Products</a>
 				<ul class="dropdown" aria-label="submenu">
-					<li><a href="#">Sub-1</a></li>
-					<li><a href="#">Sub-2</a></li>
-					<li><a href="#">Sub-3</a></li>
+					<li><a href="#">Cool products</a></li>
+					<li><a href="#">Best products</a></li>
+					<li><a href="#">Don't read this</a></li>
 				</ul>
 			</li>
 			<li><a href="about.php" class="nav-links">About Us</a></li>

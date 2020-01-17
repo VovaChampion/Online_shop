@@ -1,7 +1,7 @@
 if (document.readyState == 'loading') 
 {
     document.addEventListener('DOMContentLoaded', ready)
-    console.log("Hello from cart.js")
+    // console.log("Hello from cart.js")
 } else {
     ready()
 }
@@ -121,7 +121,6 @@ function addItemToCart(title, price, imageSrc, id, qty) //qty = 1,
     cart.push(cartitem);
 
     document.cookie = "cart=" + JSON.stringify(cart);
-    //<input class="cart-quantity-input" type="number" value="1">
 }
 
 function updateCartTotal()
@@ -139,7 +138,6 @@ function updateCartTotal()
         let price = parseFloat(priceElement.innerText.replace('SEK',''))
         let quantity = quantityElement.value
         let name = nameElement.innerText
-        // console.log(name)
         total = total + (price * quantity)
         totalQuantity = totalQuantity+Number(quantity)
     }
@@ -150,14 +148,14 @@ function updateCartTotal()
 
 function getTotalPrice()
 {
-    console.log('Get total');
     const myList = document.getElementsByClassName('cart-total-price')[0].lastChild;
     
     const totalPrice = myList.cloneNode(true);
 
+    //remove SEK and make number 
     const splitat = totalPrice.textContent.split(" ");
     const totalPriceNum = Number(splitat[1]);
-    //console.log(totalPriceNum);
 
+    //add amount to the id "totalt"
     document.getElementById("totalt").setAttribute("value", totalPriceNum)
 }
