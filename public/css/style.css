@@ -650,7 +650,6 @@ iframe{
 	display: flex;
 	flex-flow: row wrap;
 	margin: 10px;
-	/* background: hotpink; */
 	text-align: center;
 }
 
@@ -671,17 +670,79 @@ iframe{
 .about-img {
 	flex: 60%;
 }
+
+/* Contact form */
+
+.contact input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.contact label {
+	padding: 12px 12px 12px 0;
+  	display: inline-block;
+}
+
+.contact input[type=submit] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+	width: auto;
+}
+
+.contact input[type=submit]:hover {
+	background-color: #45a049;
+}
+
+.contact {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	margin: 10px;  
+	padding: 20px;
+}
+
+.contact form{
+	max-width: 800px;
+	margin-bottom: 10px;
+}
+
+.col-25 {
+	float: left;
+  	width: 25%;
+  	margin-top: 6px;
+}
+
+.col-75 {
+	float: left;
+  	width: 75%;
+  	margin-top: 6px;
+}
+
+.row {
+	margin-left: 30px !important;
+}
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 @media screen and (max-width: 375px) {
-	/* .header h1 {
-	  font-size: 30px; 
-	} */
+
 	body {
 		width: 370px;
 	}
   
 	.navbar-toggle {
 		font-size: 30px;
-		/* margin-top: -40px; */
 	}
 }
 @media screen and (max-width: 500px) {
@@ -698,6 +759,13 @@ iframe{
 	} 
 	.about-img {
 		width: 350px;
+	}
+	.contact .col-25, .contact .col-75, input[type=submit] {
+		width: 100%;
+		margin-top: 0;
+	}
+	.row {
+		margin-left: 0 !important;
 	}
 }
 

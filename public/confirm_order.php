@@ -6,7 +6,7 @@ require_once('lib/common.php');
 
 $id = new Order();
 $order_id = $id->getLastOrderId();
-// var_dump($order_id);
+
 ?>
 
 <?php include "templates/header.php"; ?>
@@ -16,6 +16,5 @@ $order_id = $id->getLastOrderId();
 
     <a href="index.php" class="btn btn-primary" onclick="deleteCookie();" role="button">Go shopping</a><br>
 </div>
-<!-- <a href="checkin.php" class="btn btn-primary" onclick="deleteCookie();" role="button">Go to Check In page</a><br> -->
 
 <?php include "templates/footer.php"; ?>

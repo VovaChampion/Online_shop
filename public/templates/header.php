@@ -56,7 +56,7 @@
 				</ul>
 			</li>
 			<li><a href="about.php" class="nav-links">About Us</a></li>
-			<li><a href="about.php" class="nav-links">Contact Us</a></li>
+			<li><a href="contact_page.php" class="nav-links">Contact Us</a></li>
 			<li><a href="#" class="nav-links">Blog</a></li>
 		</ul>
 	</nav>
