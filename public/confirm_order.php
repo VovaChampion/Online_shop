@@ -14,7 +14,7 @@ $order_id = $id->getLastOrderId();
 <div class="container">
     <div class="confirm-order">
         <h1> Thank you for your order number: <?php echo $order_id; ?></h1>
-        <a href="index.php" class="btn btn-primary" onclick="deleteCookie();" role="button">Go shopping</a>
+        <a href="home" class="btn btn-primary" onclick="deleteCookie();" role="button">Go shopping</a>
     </div>
 </div>
 

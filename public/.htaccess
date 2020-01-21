@@ -1,0 +1,8 @@
+RewriteEngine On
+
+RewriteRule ^home?$ index.php
+RewriteRule ^about?$ about.php
+RewriteRule ^contact?$ contact_page.php
+RewriteRule ^confirm?$ confirm_order.php
+
+RewriteRule ^product/([0-9]+) product_detail.php?id=$1

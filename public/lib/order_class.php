@@ -64,7 +64,7 @@ class Order
                 ':shipping_date' => $shipping_date,
 			]);
         }
-        header("Location:confirm_order.php");
+        header("Location:confirm");
     }
 
     public function sendStripe($user_first_name,$user_last_name,$user_email,$user_address,$my_array,$total_amount)

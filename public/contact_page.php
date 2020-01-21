@@ -2,7 +2,7 @@
 <?php include "templates/header.php"; ?>
 
     <div class="contact">
-        <form method="post" class="contact-form" action="contact_page.php">
+        <form method="post" class="contact-form" action="contact">
             <div class="row">
                 <div class="col-25">
                     <label for="name">Name</label>

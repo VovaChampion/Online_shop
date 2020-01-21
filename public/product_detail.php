@@ -21,8 +21,7 @@ $images = $id->selectImages($product_id);
 <?php
     if (isset($_COOKIE['cart'])) {
         $cart_array = json_decode(stripslashes($_COOKIE['cart']),true);
-        // echo '<h4>Cart</h4>';
-        var_dump($cart_array);
+        // var_dump($cart_array);
     }
 ?>
 

@@ -26,7 +26,7 @@
 <body>
 	<div class="header">
 		<h1 id="company_name" class="company_name"> 
-		<a href="index.php" onclick="deleteCookie();" style="color: black;text-decoration: none;"> LikeBatman <img src="https://img.icons8.com/office/40/000000/batman-old.png"></a></h1><br>
+		<a href="home" onclick="deleteCookie();" style="color: black;text-decoration: none;"> LikeBatman <img src="https://img.icons8.com/office/40/000000/batman-old.png"></a></h1><br>
 		
 		<form class="search-form">
 			<input type="search" name="search" placeholder="Search ..." class="search-input">
@@ -44,16 +44,16 @@
 		<span class="navbar-toggle" id="js-navbar-toggle"><i class="fas fa-bars"></i> </span>
 		<a href="#" class="logo"><img class="image_product" src="https://img.icons8.com/office/40/000000/batman-old.png" alt="batman"></a>
 		<ul class="main-nav" id="js-menu">
-			<li><a href="index.php" class="nav-links">Home</a></li>
+			<li><a href="home" class="nav-links">Home</a></li>
 			<li><a href="#" class="nav-links">Products</a>
 				<ul class="dropdown" aria-label="submenu">
-					<li><a href="index.php">Cool products</a></li>
-					<li><a href="index.php">Best products</a></li>
-					<li><a href="index.php">What's up!</a></li>
+					<li><a href="home">Cool products</a></li>
+					<li><a href="home">Best products</a></li>
+					<li><a href="home">What's up!</a></li>
 				</ul>
 			</li>
-			<li><a href="about.php" class="nav-links">About Us</a></li>
-			<li><a href="contact_page.php" class="nav-links">Contact Us</a></li>
-			<li><a href="about.php" class="nav-links">Blog</a></li>
+			<li><a href="about" class="nav-links">About Us</a></li>
+			<li><a href="contact" class="nav-links">Contact Us</a></li>
+			<li><a href="about" class="nav-links">Blog</a></li>
 		</ul>
 	</nav>
