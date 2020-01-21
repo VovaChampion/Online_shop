@@ -735,12 +735,22 @@ iframe{
 	clear: both;
 }
 
-@media screen and (max-width: 375px) {
+.confirm-order {
+	position: relative;
+	padding-top: 10%;
+	min-height: 400px;
+	text-align: center;
+	background: whitesmoke;
+	margin: 0 -15px;
+}
 
-	body {
-		width: 370px;
-	}
-  
+.confirm-order .btn-primary{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+@media screen and (max-width: 375px) { 
 	.navbar-toggle {
 		font-size: 30px;
 	}
@@ -767,6 +777,10 @@ iframe{
 	.row {
 		margin-left: 0 !important;
 	}
+	.contact {
+		margin: 0px;  
+	}
+
 }
 
 @media screen and (max-width: 768px) {

@@ -12,9 +12,6 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/product_detail.css">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
-	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
-	
 	
 	<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -50,13 +47,13 @@
 			<li><a href="index.php" class="nav-links">Home</a></li>
 			<li><a href="#" class="nav-links">Products</a>
 				<ul class="dropdown" aria-label="submenu">
-					<li><a href="#">Cool products</a></li>
-					<li><a href="#">Best products</a></li>
-					<li><a href="#">What's up!</a></li>
+					<li><a href="index.php">Cool products</a></li>
+					<li><a href="index.php">Best products</a></li>
+					<li><a href="index.php">What's up!</a></li>
 				</ul>
 			</li>
 			<li><a href="about.php" class="nav-links">About Us</a></li>
 			<li><a href="contact_page.php" class="nav-links">Contact Us</a></li>
-			<li><a href="#" class="nav-links">Blog</a></li>
+			<li><a href="about.php" class="nav-links">Blog</a></li>
 		</ul>
 	</nav>

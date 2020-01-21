@@ -12,9 +12,10 @@ $order_id = $id->getLastOrderId();
 <?php include "templates/header.php"; ?>
 
 <div class="container">
-    <h1> Thank you for your order number: <?php echo $order_id; ?></h1><br>
-
-    <a href="index.php" class="btn btn-primary" onclick="deleteCookie();" role="button">Go shopping</a><br>
+    <div class="confirm-order">
+        <h1> Thank you for your order number: <?php echo $order_id; ?></h1>
+        <a href="index.php" class="btn btn-primary" onclick="deleteCookie();" role="button">Go shopping</a>
+    </div>
 </div>
 
 <?php include "templates/footer.php"; ?>
