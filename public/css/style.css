@@ -758,10 +758,11 @@ iframe{
 }
 
 .blog-desc {
-	width: 80%;
+	width: 90%;
 	text-align: start;
 	margin: 10px 20px;
-	text-indent: 30px;
+	font-size: 20px;
+
 }
 
 .contact-blog {
@@ -772,7 +773,6 @@ iframe{
 .weather {
 	font-family: 'Montserrat', sans-serif;
     font-weight: 20;
-	height: 10%;
 	min-width: 100px;
 	margin: 0px 10px;
     color: #fff;
@@ -781,7 +781,9 @@ iframe{
     text-shadow: .1em .1em 0 rgba(0,0,0,0.3);
     font-size: 12px;
 	background: #8cd1ff;
-  	border-radius: 20px;
+	border-radius: 20px;
+	position: absolute;
+	right: 0;
 }
 .temp {
     margin: 0 auto;
@@ -797,6 +799,27 @@ body.cloudy {
 }
 body.rainy {
     background-image: linear-gradient(to right top, #637c7b, #718e8c, #7ea09e, #8db2b0, #9bc5c3);
+}
+
+.panel-body {
+	text-indent: 20px;
+	padding: 5px;
+	border: 1px solid var(--main-my-border-color);
+	border-radius: 5px;
+	font-size: 15px;
+	background: rgb(246, 249, 253);
+}
+.panel-body_hidden {
+	display: none;
+}
+
+.panel-heading {
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+.panel-status {
+	margin-right: 20px;
+
 }
 
 
@@ -837,16 +860,13 @@ body.rainy {
 	.blog-desc {
 		order: 1;
 		margin: 10px;
-		width: auto;
 	}
 	.contact-blog {
 		order: 2;
 		margin: 10px;
 	}
 	.weather {
-		position: absolute;
 		bottom: 25px;
-		right: 0;
 		order: 3;
 		height: auto;
 	}

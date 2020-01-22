@@ -84,3 +84,15 @@ function drawWeather( d ) {
 window.onload = function() {
 	weatherBallon( 2673730 );
 }
+
+// Bloge page toggle
+
+function toggleElem(elem) {
+  var current = elem.nextElementSibling.classList.toggle('panel-body_hidden');
+
+  console.log(current);
+
+  var status = elem.getElementsByClassName('panel-status')[0];
+
+  status.innerHTML = (!current) ? '<i class="fas fa-angle-double-down" style="font-size:30px"></i>' : '<i class="fas fa-angle-double-right" style="font-size:30px"></i>';
+}

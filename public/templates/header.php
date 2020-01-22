@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/product_detail.css">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	
 	<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -54,6 +55,6 @@
 			</li>
 			<li><a href="about" class="nav-links">About Us</a></li>
 			<li><a href="contact" class="nav-links">Contact Us</a></li>
-			<li><a href="blog.php" class="nav-links">Blog</a></li>
+			<li><a href="blog" class="nav-links">Blog</a></li>
 		</ul>
 	</nav>
