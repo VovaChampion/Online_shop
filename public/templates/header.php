@@ -54,6 +54,6 @@
 			</li>
 			<li><a href="about" class="nav-links">About Us</a></li>
 			<li><a href="contact" class="nav-links">Contact Us</a></li>
-			<li><a href="about" class="nav-links">Blog</a></li>
+			<li><a href="blog.php" class="nav-links">Blog</a></li>
 		</ul>
 	</nav>

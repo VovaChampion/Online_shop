@@ -750,6 +750,56 @@ iframe{
 	right: 20px;
 }
 
+/* blog */
+.blog {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 10px;
+}
+
+.blog-desc {
+	width: 80%;
+	text-align: start;
+	margin: 10px 20px;
+	text-indent: 30px;
+}
+
+.contact-blog {
+	margin: 10px 20px;
+}
+
+/* weather */
+.weather {
+	font-family: 'Montserrat', sans-serif;
+    font-weight: 20;
+	height: 10%;
+	min-width: 100px;
+	margin: 0px 10px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-shadow: .1em .1em 0 rgba(0,0,0,0.3);
+    font-size: 12px;
+	background: #8cd1ff;
+  	border-radius: 20px;
+}
+.temp {
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    font-size: 2em;
+}
+body.sunny {
+    background-image: linear-gradient(to right top, #ff4e50, #ff713e, #ff932b, #ffb41d, #f9d423);
+}
+body.cloudy {
+    background-image: linear-gradient(to right top, #63747c, #71858e, #7f96a0, #8da8b2, #9bbac5);
+}
+body.rainy {
+    background-image: linear-gradient(to right top, #637c7b, #718e8c, #7ea09e, #8db2b0, #9bc5c3);
+}
+
+
 @media screen and (max-width: 375px) { 
 	.navbar-toggle {
 		font-size: 30px;
@@ -779,6 +829,26 @@ iframe{
 	}
 	.contact {
 		margin: 0px;  
+	}
+
+	.blog {
+		position: relative;
+	}
+	.blog-desc {
+		order: 1;
+		margin: 10px;
+		width: auto;
+	}
+	.contact-blog {
+		order: 2;
+		margin: 10px;
+	}
+	.weather {
+		position: absolute;
+		bottom: 25px;
+		right: 0;
+		order: 3;
+		height: auto;
 	}
 
 }
