@@ -10,7 +10,7 @@
         <address>Lets us know if we are not match your expectations<br> 
         via phone: 555-66-77 <br> 
         email: info@likebatman.com <br> 
-        <a href="contact.php">Contact us here</a>
+        <a href="contact">Contact us here</a>
         </address>
     </div>
     <img class="about-img" src="images/batman.jpg" alt="Batman">

@@ -758,7 +758,7 @@ iframe{
 }
 
 .blog-desc {
-	width: 90%;
+	width: 85%;
 	text-align: start;
 	margin: 10px 20px;
 	font-size: 20px;
@@ -854,22 +854,7 @@ body.rainy {
 		margin: 0px;  
 	}
 
-	.blog {
-		position: relative;
-	}
-	.blog-desc {
-		order: 1;
-		margin: 10px;
-	}
-	.contact-blog {
-		order: 2;
-		margin: 10px;
-	}
-	.weather {
-		bottom: 25px;
-		order: 3;
-		height: auto;
-	}
+
 
 }
 
@@ -942,4 +927,21 @@ body.rainy {
 		width: 70%;
 		margin-left: 30%; 
 	} 
+	.blog {
+		position: relative;
+	}
+	.blog-desc {
+		order: 1;
+		margin: 10px;
+		width: 95%;
+	}
+	.contact-blog {
+		order: 2;
+		margin: 10px;
+	}
+	.weather {
+		bottom: 25px;
+		order: 3;
+		height: auto;
+	}
 }

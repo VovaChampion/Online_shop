@@ -55,8 +55,8 @@ try {
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $iterator = new IteratorIterator($stmt);
 
-    $product = new Product();
-    $rows = $product->getProducts();
+    // $product = new Product();
+    // $rows = $product->getProducts();
 ?>
     <!-- Products -->
     <section class="container content-section">

@@ -46,7 +46,7 @@
 		<a href="#" class="logo"><img class="image_product" src="https://img.icons8.com/office/40/000000/batman-old.png" alt="batman"></a>
 		<ul class="main-nav" id="js-menu">
 			<li><a href="home" class="nav-links">Home</a></li>
-			<li><a href="#" class="nav-links">Products</a>
+			<li><a href="home" class="nav-links">Products</a>
 				<ul class="dropdown" aria-label="submenu">
 					<li><a href="home">Cool products</a></li>
 					<li><a href="home">Best products</a></li>

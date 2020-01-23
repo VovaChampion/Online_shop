@@ -5,6 +5,7 @@ RewriteRule ^home?$ index.php
 RewriteRule ^about?$ about.php
 RewriteRule ^contact?$ contact_page.php
 RewriteRule ^confirm?$ confirm_order.php
+RewriteRule ^blog?$ blog.php
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
