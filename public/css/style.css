@@ -773,7 +773,7 @@ iframe{
 .weather {
 	font-family: 'Montserrat', sans-serif;
     font-weight: 20;
-	min-width: 100px;
+	min-width: 120px;
 	margin: 0px 10px;
     color: #fff;
     display: flex;
@@ -784,6 +784,7 @@ iframe{
 	border-radius: 20px;
 	position: absolute;
 	right: 0;
+	text-align: center;
 }
 .temp {
     margin: 0 auto;

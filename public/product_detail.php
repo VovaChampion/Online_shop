@@ -48,7 +48,6 @@ $images = $id->selectImages($product_id);
                     <tr>
                         <td>Price:</td>
                         <td><?php echo escape($product["price"]); ?> Kr</td>
-                        <!-- <td class="shop-item-price"><?php //echo escape($product["price"]); ?> Kr</td> -->
                     </tr>
                     <tr>
                         <td>Description:</td>
@@ -64,7 +63,6 @@ $images = $id->selectImages($product_id);
         <div class="left_column">
             <section class="ImageViewer">
                 <img class="big-image" id="big-display-1">
-                <!-- <span><i class="material-icons" style="font-size:60px;color:rgb(185, 176, 176)">zoom_in</i></span> -->
                 <div class="small-images" id="smalls">
                     <?php foreach ($images as $row) : ?>
                     <img src="images/small/<?php echo $row['image_path']?>" data-bigimgsrc="images/<?php echo $row['image_path']?>">

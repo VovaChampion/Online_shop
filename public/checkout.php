@@ -27,9 +27,6 @@ if(isset($_POST['stripeToken']))
         $product_id = (int)$value['id'];
         $my_array [] = $product_id;
     }
-    // var_dump($my_array);
-    // var_dump($total_amount);
-    // die;
 
     $stmt = new Order();
     $result = $stmt->sendStripe($user_first_name,$user_last_name,$user_email,$user_address,$my_array,$total_amount);
