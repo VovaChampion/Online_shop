@@ -38,9 +38,6 @@ try {
     // The "forward" link
     $nextlink = ($page < $pages) ? '<a href="?page=' . ($page + 1) . '" title="Next page"> <i class="fas fa-angle-right"> </i> </a> <a href="?page=' . $pages . '" title="Last page"> <i class="fas fa-angle-double-right"> </i> </a>' : '<span class="disabled"><i class="fas fa-angle-right"></i></span> <span class="disabled"> <i class="fas fa-angle-double-right"></i> </span>';
 
-    // // Display the paging information
-    // echo '<div id="paging"><p>', $prevlink, ' Page ', $page, ' of ', $pages, ' pages, displaying ', $start, '-', $end, ' of ', $total, ' results ', $nextlink, ' </p></div>';
-
     // Prepare the paged query
     $stmt = $con->prepare('SELECT * FROM products ORDER BY product_name LIMIT :limit OFFSET :offset');
 
@@ -55,8 +52,6 @@ try {
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $iterator = new IteratorIterator($stmt);
 
-    // $product = new Product();
-    // $rows = $product->getProducts();
 ?>
     <!-- Products -->
     <section class="container content-section">
@@ -65,7 +60,6 @@ try {
         <? foreach ($iterator as $row) { ?>
             <div class="shop-item">
                 <span class="shop-item-title"><?php echo escape($row["product_name"]); ?></span>
-                <!-- <span class="shop-item-description"><?php //echo escape($row["description"]); ?></span> -->
                 <a href="product_detail.php?id=<?php echo escape($row['id'])?>"> <img class="shop-item-image" style="width:14em; height:15em;" src="<?php echo escape($row["image_path"]); ?>"></a>
                 <div class="shop-item-details">
                     <span class="shop-item-price"><?php echo "SEK " . escape($row["price"]); ?></span>

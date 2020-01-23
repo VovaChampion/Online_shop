@@ -1,7 +1,7 @@
 "use strict";
 
 // Stripe API Key
-var stripe = new Stripe('pk_test_KHSmO2jE8eWgPva2tf5q9mTS'); //YOUR_STRIPE_PUBLISHABLE_KEY
+var stripe = new Stripe('------'); //YOUR_STRIPE_PUBLISHABLE_KEY
 var elements = stripe.elements();
 
 // Custom Styling

@@ -13,35 +13,19 @@ class Order
     // get last order id (max)
     public function getLastOrderId()
     {
-        $stmt = $this->db->prepare('SELECT MAX(id) FROM batman.order');
+        $stmt = $this->db->prepare('SELECT MAX(id) FROM order');
         $stmt->execute();
 
         $id = $stmt->fetchColumn();
         return $id;
     }
 
-    // public function countDays($new_date)
-    // {
-    //     $date = new DateTime ($new_date);
-    //     $today = new DateTime (date("Y-m-d"));
-
-    //     if($today > $date) {
-    //         echo "The ticket is not valid";
-    //     } elseif ($today == $date){
-    //         echo "Today last day";
-    //     } else {
-    //         $days = $today->diff($date); 
-    //         echo $days->format('%a days');
-    //     }       
-    // }
-
-
     public function createOrder($user_first_name,$user_last_name,$user_email,$user_address,$my_array)
     {
         $date = date('Y-m-d');
         $shipping_date = date('Y-m-d', strtotime(' + 5 days'));
 
-        $stmt = $this->db->prepare('INSERT INTO batman.order (first_name, last_name, email, address, order_date) 
+        $stmt = $this->db->prepare('INSERT INTO order (first_name, last_name, email, address, order_date) 
         VALUES (:first_name, :last_name, :email, :address, :order_date);');
 
         $stmt->execute([
@@ -56,7 +40,7 @@ class Order
 
         foreach($my_array as $key => $value)
         {
-            $stmt = $this->db->prepare('INSERT INTO batman.order_items (order_id, product_id, shipping_date) 
+            $stmt = $this->db->prepare('INSERT INTO order_items (order_id, product_id, shipping_date) 
             VALUES (:order_id, :product_id, :shipping_date);');
             $stmt->execute([
 				':order_id' => $id_order,
@@ -70,12 +54,10 @@ class Order
     public function sendStripe($user_first_name,$user_last_name,$user_email,$user_address,$my_array,$total_amount)
     {
         require_once('../vendor/stripe/stripe-php/init.php');
-        \Stripe\Stripe::setApiKey('sk_test_Y5Fm9BboJjOtQwUFG4N7AzTk'); //YOUR_STRIPE_SECRET_KEY
+        \Stripe\Stripe::setApiKey('------'); //YOUR_STRIPE_SECRET_KEY
 
         $token = (isset($_POST['stripeToken'])) ? $_POST['stripeToken'] : null;
 
-        // $name_last = "Bryant";
-        // $address = "Odenplan";
         $state = "Stockholm";
         $zip = "12050";
         $country = "Sweden";

@@ -8,7 +8,6 @@
             This article is about the fictional character. For other uses, see Batman
         </div>
         <div class="panel-body">
-            <!-- <h5>This article is about the fictional character. For other uses, see Batman</h5><br> -->
             <p>Batman is a fictional superhero appearing in American comic books published by DC Comics. 
             The character was created by artist Bob Kane and writer Bill Finger, and first appeared 
             in Detective Comics #27 in 1939. Originally named the "Bat-Man," the character is also 

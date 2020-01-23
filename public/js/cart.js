@@ -1,7 +1,6 @@
 if (document.readyState == 'loading') 
 {
     document.addEventListener('DOMContentLoaded', ready)
-    // console.log("Hello from cart.js")
 } else {
     ready()
 }
