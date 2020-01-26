@@ -9,7 +9,7 @@ try {
     $con=$db->connect();
 
     // Find out how many items are in the table
-    $total = $con->query('SELECT COUNT(*) FROM products')->fetchColumn();
+    $total = $con->query('SELECT COUNT(*) FROM batman.products')->fetchColumn();
 
     // How many items to list per page
     $limit = 6;
@@ -39,7 +39,7 @@ try {
     $nextlink = ($page < $pages) ? '<a href="?page=' . ($page + 1) . '" title="Next page"> <i class="fas fa-angle-right"> </i> </a> <a href="?page=' . $pages . '" title="Last page"> <i class="fas fa-angle-double-right"> </i> </a>' : '<span class="disabled"><i class="fas fa-angle-right"></i></span> <span class="disabled"> <i class="fas fa-angle-double-right"></i> </span>';
 
     // Prepare the paged query
-    $stmt = $con->prepare('SELECT * FROM products ORDER BY product_name LIMIT :limit OFFSET :offset');
+    $stmt = $con->prepare('SELECT * FROM batman.products ORDER BY product_name LIMIT :limit OFFSET :offset');
 
     // Bind the query params
     $stmt->bindParam(':limit', $limit, PDO::PARAM_INT);
