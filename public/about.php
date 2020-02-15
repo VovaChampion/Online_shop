@@ -8,7 +8,7 @@
         Our team works constantly on improving our assortiment.
         </p>  
         <address>Lets us know if we are not match your expectations<br> 
-        via phone: 555-66-77 <br> 
+        via phone: 555-77-77 <br> 
         email: info@likebatman.com <br> 
         <a href="contact">Contact us here</a>
         </address>
